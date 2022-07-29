@@ -224,5 +224,4 @@ Now we can click the link and access our JBoss Application Server:
 You can change your Java EE App and run docker build, tag and push commands to update 
 your App Runner automatically.
 
-### Conclusion
-
+Hoe you enjoy this tutorial and please feel free to provide us any feedback!
