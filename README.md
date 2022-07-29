@@ -95,6 +95,16 @@ Now we have the jboss app server and also our simple Java EE app ready and we
 need to create a Docker File to describe the commands that will build the image. 
 Create a file named javaee.DockerFile in your project directory with the following code:
 
+    FROM amazoncorretto:8
+    
+    EXPOSE 8080
+    COPY "jboss-4.2.3.GA" "/opt/jboss"
+    COPY "myapp" "/opt/jboss/server/default/deploy/myapp.war"
+    
+    RUN find /opt/jboss | grep myapp
+    
+    ENTRYPOINT ["/opt/jboss/bin/run.sh", "-b", "0.0.0.0"]
+
 
 Now let's explain this file step-by-step:
 Our image will be based on a public Amazon Corretto 8 image that will provide us 
